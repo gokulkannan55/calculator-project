@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claculate</title>
+    <link rel="stylesheet" href="color.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="index">
+        <h1>Online Calculator</h1>
+    </div>
+    <div class="para">
+        <p>Our online calculator website offers a fast and convenient way to solve a wide range of mathematical problems.
+            From basic arithmetic to advanced equations, everything is just a few clicks away.
+            Designed for students, professionals, and anyone needing quick answers.
+            Our clean and simple interface makes calculations easy and stress-free.
+            Access it anytime, anywhere — no downloads or sign-ups required.
+            Get instant results and improve your productivity with our smart tools! </p>
+    </div>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output-Screen">
+            <button onclick="clears()">cl</button>
+            <button onclick="del()">del</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="claculate()" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        let outputScreen =document.getElementById("output-Screen")
+
+        function display(num) {
+            outputScreen.value += num;
+            
+            
+        }
+        function claculate(){
+             try{
+                outputScreen.value=eval(outputScreen.value);
+            }
+            catch{
+                alert("invalid operation")
+                confirm("please enter correct operation")
+            }
+        }
+        function clears(){
+            outputScreen.value ="";
+        }    
+        function del(){
+            outputScreen.value=outputScreen.value.slice(0,-1);
+        }
+        
+    </script>
+     <div class="icon">
+        <a  href="https://www.facebook.com/"><img src="D:\calculatar\image\icons8-facebook-30.png"></a>
+        <a  href="https://www.bing.com/search?filters=ufn%3a%22WhatsApp%22+sid%3a%22e222f4ec-6195-a300-6e2a-d15093aece26%22&qs=MB&pq=whatsapp&sc=22-8&q=whatsapp&gs_lcrp=EgRlZGdlKgcIABAuGOoCMgcIABAuGOoCMgcIARAAGOoCMgcIAhAAGOoCMgcIAxBFGMIDMgcIBBBFGMIDMgcIBRBFGMIDMgcIBhBFGMIDMgcIBxBFGMID0gEJMTg1NjNqMGo5qAIIsAIB&FORM=ANAB01&PC=U531"><img src="D:\calculatar\image\icons8-whatsapp-30.png"></a>
+        <a  href="https://x.com/?lang=en-in"><img src="D:\calculatar\image\icons8-twitter-30.png"></a>
+     </div>
+</body>
+</html>
